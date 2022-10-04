@@ -7,5 +7,7 @@ export const fetchCountries = (name) => {
         throw new Error(response.status);
       }
       return response.json();
-    })
-};
+    }).then(countries => {
+      console.log(countries.filter(country => country.name.toLowerCase().includes(name))); 
+    });
+}
