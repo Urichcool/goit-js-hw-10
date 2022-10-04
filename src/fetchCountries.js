@@ -8,6 +8,6 @@ export const fetchCountries = (name) => {
       }
       return response.json();
     }).then(countries => {
-      console.log(countries.filter(country => country.name.toLowerCase().includes(name))); 
+     return countries.filter(country => country.name.toLowerCase().includes(name)); 
     });
 }
