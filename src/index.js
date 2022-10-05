@@ -9,7 +9,11 @@ const countryInfoEl = document.querySelector('.country-info');
 
 const DEBOUNCE_DELAY = 300;
 
-searchInputEl.addEventListener('input', debounce(e => {
+searchInputEl.addEventListener('input', debounce(onInputRender
+, DEBOUNCE_DELAY));
+
+
+function onInputRender() {
    clearMarkup();
   if (searchInputEl.value !== '') {
     const trimedValue = searchInputEl.value.trim();
@@ -34,7 +38,7 @@ searchInputEl.addEventListener('input', debounce(e => {
       }
     })
   }
-}, DEBOUNCE_DELAY));
+}
 
 
 function renderCountriesList(countries) {
